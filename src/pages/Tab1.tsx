@@ -1,13 +1,22 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+import {
+  IonContent,
+  IonHeader,
+  IonImg,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import ExploreContainer from "../components/ExploreContainer";
+import cover from "../Book Cover.jpg";
+import { css, cx } from "../../styled-system/css";
+import { shadowPart } from "../../styled-system/patterns";
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Dynamic Styles Demo</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -16,7 +25,21 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <div>
+          <IonImg
+            className={cx(
+              shadowPart({
+                part: "image",
+                borderRadius: "sm",
+              }),
+              css({
+                padding: 16,
+              })
+            )}
+            src={cover}
+            alt="Cover"
+          />
+        </div>
       </IonContent>
     </IonPage>
   );

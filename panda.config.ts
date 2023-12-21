@@ -15,6 +15,32 @@ export default defineConfig({
     extend: {},
   },
 
+  patterns: {
+    extend: {
+      shadowPart: {
+        description: "Applies styles to a shadow part",
+        properties: {
+          // the part to target
+          part: { type: "string" },
+          // The direction of the scroll
+          // direction: { type: "enum", value: ["horizontal", "vertical"] },
+          // Whether to hide the scrollbar
+          // hideScrollbar: { type: "boolean" },
+        },
+        // disallow the `overflow` property (in TypeScript)
+        blocklist: ["overflow"],
+        transform(props) {
+          const { part, ...rest } = props;
+          return {
+            [`&::part(${part})`]: {
+              ...rest,
+            },
+          };
+        },
+      },
+    },
+  },
+
   // The output directory for your css system
   outdir: "styled-system",
 });
