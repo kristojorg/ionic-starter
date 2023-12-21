@@ -76,7 +76,7 @@ const PromotedPublicationCard = () => {
           bg: "rgba(255, 255, 255, 0.8)",
           _osDark: {
             border: "1px solid rgba(208, 213, 221, 0.4)",
-            bg: "black",
+            bg: "rgba(0,0,0,0.8)",
           },
 
           borderRadius: "lg",
