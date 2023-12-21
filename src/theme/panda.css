@@ -1,1 +1,5 @@
-@layer reset, base, tokens, recipes, utilities;
+@layer reset, base, ionic, tokens, recipes, utilities;
+
+@layer ionic {
+  /* apply our ionic styles here */
+}

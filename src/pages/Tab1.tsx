@@ -15,16 +15,25 @@ import { arrowForwardCircleOutline } from "ionicons/icons";
 const Tab1: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
+      <IonHeader
+        className={css({
+          shadow: "none!",
+        })}
+      >
+        <IonToolbar
+          className={css({
+            "--background": "transparent",
+            "--border-style": "none",
+          })}
+        >
           <IonTitle>Dynamic Styles Demo</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
+          {/* <IonToolbar>
             <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
+          </IonToolbar> */}
         </IonHeader>
         <div
           className={css({
