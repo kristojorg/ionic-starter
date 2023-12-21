@@ -6,10 +6,9 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
 import cover from "../Book Cover.jpg";
 import { css, cx } from "../../styled-system/css";
-import { shadowPart } from "../../styled-system/patterns";
+import { bleed, shadowPart } from "../../styled-system/patterns";
 
 const Tab1: React.FC = () => {
   return (
@@ -25,7 +24,26 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div>
+        <div
+          className={css({
+            position: "relative",
+            zIndex: 0,
+          })}
+        >
+          <IonImg
+            src={cover}
+            className={cx(
+              shadowPart({
+                part: "image",
+                filter: "auto",
+                blur: "3xl",
+              }),
+              css({
+                position: "absolute",
+                zIndex: -1,
+              })
+            )}
+          />
           <IonImg
             className={cx(
               shadowPart({
