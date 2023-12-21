@@ -14,8 +14,10 @@ import {
   shadowPart,
   hstack,
   vstack,
+  aspectRatio,
 } from "../../styled-system/patterns";
 import { arrowForwardCircleOutline } from "ionicons/icons";
+import { BlurhashImage } from "../components/BlurHash";
 
 const Tab1: React.FC = () => {
   return (
@@ -46,20 +48,14 @@ const Tab1: React.FC = () => {
             zIndex: 0,
           })}
         >
-          <IonImg
+          <BlurhashImage
             src={cover}
-            className={cx(
-              shadowPart({
-                part: "image",
-                filter: "auto",
-                blur: "3xl",
-              }),
-              css({
-                position: "absolute",
-                zIndex: -1,
-                top: "-20%",
-              })
-            )}
+            className={css({
+              position: "absolute",
+              zIndex: -1,
+              inset: 0,
+              height: "100%",
+            })}
           />
           <PromotedPublicationCard />
         </div>
@@ -90,6 +86,7 @@ const PromotedPublicationCard = () => {
             part: "image",
             borderRadius: "sm",
             maxH: "280px",
+            aspectRatio: 633 / 1000,
           }),
           css({
             pb: 4,
