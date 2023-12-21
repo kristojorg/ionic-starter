@@ -9,7 +9,12 @@ import {
 } from "@ionic/react";
 import cover from "../Book Cover.jpg";
 import { css, cx } from "../../styled-system/css";
-import { bleed, shadowPart, hstack } from "../../styled-system/patterns";
+import {
+  bleed,
+  shadowPart,
+  hstack,
+  vstack,
+} from "../../styled-system/patterns";
 import { arrowForwardCircleOutline } from "ionicons/icons";
 
 const Tab1: React.FC = () => {
@@ -66,13 +71,18 @@ const Tab1: React.FC = () => {
 const PromotedPublicationCard = () => {
   return (
     <div
-      className={css({
-        border: "1px solid rgba(208, 213, 221, 0.4)",
-        bg: "black",
-        borderRadius: "lg",
-        margin: 6,
-        padding: 4,
-      })}
+      className={cx(
+        vstack({
+          alignItems: "stretch",
+        }),
+        css({
+          border: "1px solid rgba(208, 213, 221, 0.4)",
+          bg: "black",
+          borderRadius: "lg",
+          margin: 6,
+          padding: 4,
+        })
+      )}
     >
       <IonImg
         className={cx(
@@ -88,7 +98,7 @@ const PromotedPublicationCard = () => {
         src={cover}
         alt="Cover"
       />
-      <div className={hstack()}>
+      <div className={hstack({ justifyContent: "space-between" })}>
         <div className={css({ fontWeight: "bold" })}>
           <div className={css({ fontSize: "sm" })}>
             NYPL & WYNC Book Club’s November Pick
