@@ -8,6 +8,9 @@ import {
   IonIcon,
 } from "@ionic/react";
 import cover from "../Book Cover.jpg";
+import callWild from "../call-wild.jpeg";
+import prince from "../prince.jpeg";
+import TheRoad from "../the-road.jpeg";
 import { css, cx } from "../../styled-system/css";
 import {
   bleed,
@@ -18,6 +21,8 @@ import {
 } from "../../styled-system/patterns";
 import { arrowForwardCircleOutline } from "ionicons/icons";
 import { BlurhashImage } from "../components/BlurHash";
+
+const src = callWild;
 
 const Tab1: React.FC = () => {
   return (
@@ -37,24 +42,19 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          {/* <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar> */}
-        </IonHeader>
         <div
           className={css({
             position: "relative",
-            zIndex: 0,
           })}
         >
           <BlurhashImage
-            src={cover}
+            src={src}
             className={css({
               position: "absolute",
               zIndex: -1,
               inset: 0,
               height: "100%",
+              top: "-30%",
             })}
           />
           <PromotedPublicationCard />
@@ -73,7 +73,12 @@ const PromotedPublicationCard = () => {
         }),
         css({
           border: "1px solid rgba(208, 213, 221, 0.4)",
-          bg: "black",
+          bg: "rgba(255, 255, 255, 0.8)",
+          _osDark: {
+            border: "1px solid rgba(208, 213, 221, 0.4)",
+            bg: "black",
+          },
+
           borderRadius: "lg",
           margin: 6,
           padding: 4,
@@ -85,14 +90,16 @@ const PromotedPublicationCard = () => {
           shadowPart({
             part: "image",
             borderRadius: "sm",
-            maxH: "280px",
-            aspectRatio: 633 / 1000,
+            objectFit: "cover",
           }),
           css({
             pb: 4,
+            h: "280px",
+            alignSelf: "center",
+            aspectRatio: 633 / 1000,
           })
         )}
-        src={cover}
+        src={src}
         alt="Cover"
       />
       <div className={hstack({ justifyContent: "space-between" })}>

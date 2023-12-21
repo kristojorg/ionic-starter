@@ -24,7 +24,7 @@ const encodeImageToBlurhash = async (imageUrl: string) => {
   const image = await loadImage(imageUrl);
   const imageData = getImageData(image);
   if (!imageData) return null;
-  return encode(imageData.data, imageData.width, imageData.height, 4, 4);
+  return encode(imageData.data, imageData.width, imageData.height, 6, 8);
 };
 
 export const BlurhashImage = ({
@@ -45,11 +45,10 @@ export const BlurhashImage = ({
     <div className={className}>
       <Blurhash
         hash={hash}
-        punch={1}
+        punch={2}
         className={css({
           "&>*": {
-            filter: "blur(64px)",
-            blur: "3xl",
+            filter: "blur(100px)",
           },
         })}
         width="100%"
