@@ -15,6 +15,8 @@ export default defineConfig({
     extend: {},
   },
 
+  jsxFramework: "react",
+
   patterns: {
     extend: {
       shadowPart: {
