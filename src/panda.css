@@ -1,0 +1,9 @@
+@import "@ionic/react/css/normalize.css" layer(reset);
+
+@layer ionic;
+@layer reset, base, tokens, recipes, utilities;
+
+@import "@ionic/react/css/core.css" layer(ionic);
+@import "@ionic/react/css/structure.css" layer(ionic);
+@import "@ionic/react/css/typography.css" layer(ionic);
+@import "./ionic-theme.css" layer(ionic);
