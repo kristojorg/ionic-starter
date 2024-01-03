@@ -29,7 +29,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader
         className={css({
-          shadow: "none!",
+          shadow: "none",
         })}
       >
         <IonToolbar
@@ -93,6 +93,10 @@ const PromotedPublicationCard = () => {
             objectFit: "cover",
           }),
           css({
+            // "&::part(image)": {
+            //   borderRadius: "sm",
+            //   objectFit: "cover",
+            // },
             pb: 4,
             h: "280px",
             alignSelf: "center",
