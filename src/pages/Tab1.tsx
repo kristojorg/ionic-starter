@@ -29,6 +29,8 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader
         className={css({
+          // if you make this important, it will then override the unlayered
+          // styles in the constructed stylesheet.
           shadow: "none",
         })}
       >
